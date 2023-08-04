@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="mt-3 mb-5">
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="button" id="createTaskBtn" class="button is-primary">
+              Create task
+            </button>
+          </div>
+          <div class="control">
+            <button type="button" id="toggleArchive" class="button is-warning">
+              Show archive
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="title" id="title">Tasks</h2>
+        <ul id="tasksList" class="tasks-list"></ul>
+      </div>
+    </div>
+
+    <div id="createTaskModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <h3 class="title">Create new task</h3>
+          <form id="createTaskForm">
+            <div class="field is-grouped">
+              <div class="control is-expanded">
+                <input
+                  type="text"
+                  autocomplete="off"
+                  name="text"
+                  placeholder="Text"
+                  class="input"
+                />
+              </div>
+              <div class="control">
+                <div class="select">
+                  <select name="category">
+                    <option value="task">Task</option>
+                    <option value="idea">Idea</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control">
+                <button type="submit" class="button is-primary">Add</button>
+              </div>
+              <div class="control">
+                <button type="button" class="button is-light modal-close-btn">
+                  Close
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button class="modal-close is-large" type="button"></button>
+    </div>
+
+    <div id="editTaskModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <h3 class="title">Update task</h3>
+          <form id="editTaskForm">
+            <div class="field is-grouped">
+              <div class="control is-expanded">
+                <input
+                  type="text"
+                  autocomplete="off"
+                  name="text"
+                  placeholder="Text"
+                  class="input"
+                />
+              </div>
+              <div class="control">
+                <div class="select">
+                  <select name="category">
+                    <option value="task">Task</option>
+                    <option value="idea">Idea</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control">
+                <button type="submit" class="button is-primary">Update</button>
+              </div>
+              <div class="control">
+                <button type="button" class="button is-light modal-close-btn">
+                  Close
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button class="modal-close is-large" type="button"></button>
+    </div>
+
+    <div id="removeTaskModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <h3 class="title">Are you sure?</h3>
+          <form id="removeTaskForm">
+            <div class="field is-grouped">
+              <div class="control">
+                <button type="submit" class="button is-danger">Yes</button>
+              </div>
+              <div class="control">
+                <button type="button" class="button is-light modal-close-btn">
+                  No
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button class="modal-close is-large" type="button"></button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
